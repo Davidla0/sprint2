@@ -1,0 +1,4 @@
+.main-layout>*:not(.full) {
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+}

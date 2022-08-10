@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMEGEN</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="main-layout" onload="onInit()">
+    <header class="menu-bar full main-layout">
+        <div class="main-header flex space-between align-cente">
+            <div class="logo">memegen</div>
+            <nav class="main-nav ">
+                <ul class="main-nav-list flex clean-list open">
+                    <li class="flex space-between"><a href="#">gallery</a></li>
+                    <li class="flex space-between"><a href="#">memes</a></li>
+                    <li class="flex space-between"><a href="#">about</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <section class="search-container flex space-between align-cente">
+        <input type="search" placeholder="Enter search keyword">
+        <div>search by some popular keywords</div>
+    </section>
+
+    <section class="images-container">
+        <div class="grid-container">
+            <!-- <img id=1 class="grid" src="img/meme-imgs/2.jpg" onclick="onClickImage(this)" alt="">
+            <img id=2 class="grid" src="img/meme-imgs/2.jpg" onclick="onClickImage(this)" alt="">
+            <img id=3 class="grid" src="img/meme-imgs/2.jpg" onclick="onClickImage(this)" alt="">
+            <img id=4 class="grid" src="img/meme-imgs/2.jpg" onclick="onClickImage(this)" alt="">
+            <img id=5 class="grid" src="img/meme-imgs/2.jpg" onclick="onClickImage(this)" alt="">
+            <img id=6 class="grid" src="img/meme-imgs/2.jpg" onclick="onClickImage(this)" alt=""> -->
+        </div>
+    </section>
+
+    <section class="about">
+        <img class="my-image" src="" alt="">
+        <div class="description">
+            <h1 class="my-name">David Laufer</h1>
+            <p class="about-me">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque sed doloribus
+                consequuntur eligendi reprehenderit dicta. Obcaecati, eligendi maiores expedita fugit voluptatibus,
+                autem voluptas libero velit rerum, dolores quaerat? Obcaecati, aspernatur?</p>
+            <div class="links-media">
+                <a href="" class="linkedin">linkedin</a>
+                <a href="" class="facebook">facebook</a>
+                <a href="" class="something">something</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h1 class="logo">MEMEGEN</h1>
+        <p class="rights">all rights reserved 2022</p>
+    </footer>
+
+    <div class="modal flex space-between">
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="450" width="450">
+            </canvas>
+        </div>
+        <div class="toolbar flex flex-column">
+            <div class="toolbar basic-toolbar flex-column">
+                <input value='' class="toolbar-input" type="text" onkeyup="onChangedTxt(event)">
+                <div class="toolbar basic-toolbar-controller">
+                    <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="">
+                    <img src="icons/add.png" alt="">
+                    <img src="icons/trash.png" alt="">
+                </div>
+            </div>
+
+            <div class="toolbar advanced-edit">
+                <img src="ICONS/increase font - icon.png" alt="">
+                <img src="ICONS/decrease font - icon.png" alt="">
+                <img src="ICONS/align-to-left.png" alt="">
+                <img src="ICONS/center-text-alignment.png" alt="">
+                <img src="ICONS/align-to-right.png" alt="">
+
+                <input type="text" name="" id="">
+                <img src="ICONS/text stroke.png" alt="">
+
+                <img class="color-picker" src="ICONS/paint-board-and-brush.png" alt=""
+                    onclick="openColorSelector(event)">
+                <input type="color" class="invisible" value="#add8e6" onchange="getColor()" />
+            </div>
+
+            <div class="accessories">
+                <input type="text" name="" id="">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/services/memeService.js"></script>
+    <script src="js/conrollers/memeController.js"></script>
+    <script src="js/conrollers/galleryController.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

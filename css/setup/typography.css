@@ -1,0 +1,9 @@
+@font-face {
+    font-family: montserrat-regular;
+    src: url(/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: montserrat-thin;
+    src: url(/fonts/Montserrat/Montserrat-Thin.ttf);
+}

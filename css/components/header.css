@@ -1,0 +1,27 @@
+header {
+    background-color: var(--color1);
+}
+
+.menu-bar {
+    min-height: 66px;
+}
+
+.main-header {
+    padding-top: 24px;
+}
+
+.main-nav-list li a {
+    border: none;
+    text-decoration: none;
+    width: 100px;
+    font-size: 0.95em;
+    font-weight: 400;
+
+}
+
+.main-nav-list li {}
+
+/* .main-nav-list>li>a {
+    /* height: 4.125rem; */
+/* width: 4.125rem; */
+/* }  */

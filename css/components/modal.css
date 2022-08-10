@@ -1,0 +1,51 @@
+.modal .toolbar>img {
+    height: 40px;
+    width: 40px;
+}
+
+.toolbar {
+    width: 370px;
+    text-align: center;
+}
+
+
+
+.basic-toolbar-controller {
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.basic-toolbar-controller>img {
+    margin-right: 10px;
+
+}
+
+.toolbar-input {
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    font-size: 1.25em;
+}
+
+.advanced-edit {
+    margin-top: 40px;
+}
+
+.accessories {
+    margin-top: 40px;
+}
+
+.accessories input {
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+}
+
+#my-canvas {
+    background-color: black;
+}
+
+.invisible {
+    display: none;
+}

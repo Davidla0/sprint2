@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    font-size: 1em;
+    margin: 0;
+    background-color: var(--color2);
+    font-family: montserrat-regular;
+}
+
+footer {
+    background-color: var(--color1);
+    text-align: center;
+}
