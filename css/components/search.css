@@ -1,4 +1,6 @@
 .search-container {
     background-color: var(--white);
     padding: 40px;
+    padding-top: 5%;
+
 }

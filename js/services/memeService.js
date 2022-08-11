@@ -1,30 +1,11 @@
 'use strict'
+const STORAGE_KEY = 'memeDB'
+const gSavedMemes = []
 
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
-var gImgs = [
-    { id: 1, url: 'img/meme-imgs/1.jpg', keywords: ['animals', 'cute'] },
-    { id: 2, url: 'img/meme-imgs/2.jpg', keywords: ['animals', 'cute', 'baby'] },
-    { id: 3, url: 'img/meme-imgs/3.jpg', keywords: ['animals', 'cute'] },
-    { id: 4, url: 'img/meme-imgs/4.jpg', keywords: ['animals', 'cute'] },
-    { id: 5, url: 'img/meme-imgs/5.jpg', keywords: ['animals', 'cute'] },
-    { id: 6, url: 'img/meme-imgs/6.jpg', keywords: ['animals', 'cute'] },
-    { id: 7, url: 'img/meme-imgs/7.jpg', keywords: ['animals', 'cute'] },
-    { id: 8, url: 'img/meme-imgs/8.jpg', keywords: ['animals', 'cute'] },
-    { id: 9, url: 'img/meme-imgs/9.jpg', keywords: ['animals', 'cute'] },
-
-
-];
+var gImgs = getImgForDisplay();
 var gMeme
-// var gMeme = {
-//     selectedImgId: 1,
-//     selectedLineIdx: 0,
-//     lines: [{
-//         txt: 'I sometimes eat Falafel', size: 20,
-//         align: 'left',
-//         color: 'red'
-//     }
-//     ]
-// }
+var gMemes
 
 
 function createMeme(id) {
@@ -33,9 +14,15 @@ function createMeme(id) {
         selectedLineIdx: 0,
         lines: [{
             txt: 'I sometimes eat Falafel',
-            size: 20,
+            size: 40,
             align: 'left',
-            color: 'red'
+            color: 'white'
+        },
+        {
+            txt: 'Another line',
+            size: 40,
+            align: 'left',
+            color: 'white'
         }
         ]
     }
@@ -64,5 +51,34 @@ function setLineTxt(newTxt) {
 }
 
 function setTxtColor(color) {
-    gMeme.lines.color = color
+    gMeme.lines[gMeme.selectedLineIdx].color = color
 }
+
+function setFontSize(param) {
+    gMeme.lines[gMeme.selectedLineIdx].size += param
+}
+
+function setLine() {
+    gMeme.selectedLineIdx = gMeme.selectedLineIdx === 0 ? 1 : 0
+    console.log(gMeme.selectedLineIdx);
+}
+
+function saveMeme() {
+
+    gSavedMemes[gMeme.selectedImgId] = gMeme
+    _saveMemeToStorage()
+}
+
+function loadMemesFromStorage() {
+    gMemes = _loadFromStorage()
+    return gMemes
+}
+
+function _saveMemeToStorage() {
+    saveToStorage(STORAGE_KEY, gSavedMemes)
+}
+
+function _loadFromStorage() {
+    return loadFromStorage(STORAGE_KEY, gSavedMemes)
+}
+

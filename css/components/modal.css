@@ -1,24 +1,79 @@
+.modal {
+    position: fixed;
+    flex-direction: row;
+    padding-top: 30px;
+    top: 20%;
+    right: 0;
+    height: 65vh;
+    background-color: rgb(255 255 255 / 90%);
+    border: 5px solid var(--color1);
+    /* box-shadow: -6px 0 17px rgb(0 0 0 / 26%); */
+    width: 70%;
+    transition: transform .6s, box-shadow .6s;
+    transform: translateX(150%);
+}
+
+body.modal-opened .modal {
+    box-shadow: -6px 0 17px rgb(0 0 0 / 26%);
+    transform: translateX(-15vh);
+    opacity: 1;
+}
+
+body.menu-opened>*:not(.modal) {
+    opacity: 0.5;
+}
+
+body.menu-opened {
+    overflow: hidden;
+}
+
+@media (max-width: 640px) {
+    .modal {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-inline-end: 2em;
+        padding-inline-start: 2em;
+
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+
+    }
+
+    .toolbar {
+        width: 100%;
+    }
+
+    .advanced-edit {
+        margin-top: 2%;
+    }
+
+    .accessories {
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+}
+
 .modal .toolbar>img {
     height: 40px;
     width: 40px;
 }
 
 .toolbar {
-    width: 370px;
+    width: 360px;
     text-align: center;
 }
-
-
 
 .basic-toolbar-controller {
     margin-top: 10px;
     text-align: center;
-
 }
 
 .basic-toolbar-controller>img {
     margin-right: 10px;
-
 }
 
 .toolbar-input {
@@ -48,4 +103,14 @@
 
 .invisible {
     display: none;
+}
+
+.emoji-list {
+    font-size: 48px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 35px;
+    width: 6em;
+    padding-inline-start: 13%;
+
 }

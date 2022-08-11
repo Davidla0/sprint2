@@ -19,3 +19,7 @@
 .flex-column {
     flex-direction: column;
 }
+
+.logo {
+    width: 8em;
+}

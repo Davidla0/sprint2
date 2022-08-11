@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memes</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="renderFromStorage()">
+    <header class="menu-bar full main-layout">
+        <div class="main-header flex space-between align-cente">
+            <img class="logo" src="img/LOGO/LOGO.png"></img>
+            <nav class="main-nav ">
+                <ul class="main-nav-list flex clean-list open">
+                    <li class="flex space-between"><a href="#">gallery</a></li>
+                    <li class="flex space-between"><a href="#">memes</a></li>
+                    <li class="flex space-between"><a href="#">about</a></li>
+                </ul>
+            </nav>
+            <button class="toggle-menu" onclick="toggleMenu()">☰</button>
+        </div>
+
+    </header>
+
+    <section class="images-container">
+        <div class="grid-container">
+
+        </div>
+    </section>
+
+    <script src="js/services/gallery.service.js"></script>
+    <script src="js/services/memeService.js"></script>
+    <script src="js/conrollers/memeController.js"></script>
+    <script src="js/conrollers/galleryController.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <!-- <script src="js/services/gallery.service.js"></script> -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

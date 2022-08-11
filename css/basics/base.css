@@ -6,6 +6,9 @@
 body {
     font-size: 1em;
     margin: 0;
+    resize: none;
+    height: 80vh;
+    /* width: 1000px; */
     background-color: var(--color2);
     font-family: montserrat-regular;
 }

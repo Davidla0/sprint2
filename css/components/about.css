@@ -1,5 +1,21 @@
 .about {
     background-color: var(--white);
+    display: flex;
+    min-height: 44vh;
+
 }
 
+.about>div {
+    display: flex;
+
+    align-items: center;
+}
+
+
 .description {}
+
+.my-image {
+    width: 14em;
+    border-radius: 50%;
+    padding-inline-end: 3em;
+}
