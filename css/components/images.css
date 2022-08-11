@@ -31,3 +31,16 @@
 
     /* min-height: 150px; */
 }
+
+@media (max-width:640px) {
+    .grid-container {
+
+        padding-bottom: 10px;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 165px 165px;
+        grid-template-columns: 165px 165px;
+        gap: 6px;
+        overflow-y: scroll;
+    }
+}

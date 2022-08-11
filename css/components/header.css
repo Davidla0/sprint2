@@ -68,9 +68,9 @@ body.menu-opened {
         transform: translateX(100%);
     }
 
-    body.menu-opened>*:not(.main-nav-list) {
+    /* body.menu-opened>:not(.main-nav-list) {
         opacity: 0.5;
-    }
+    } */
 
     body.menu-opened .main-nav-list {
         box-shadow: -6px 0 17px rgb(0 0 0 / 26%);

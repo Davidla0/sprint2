@@ -7,7 +7,6 @@
     height: 65vh;
     background-color: rgb(255 255 255 / 90%);
     border: 5px solid var(--color1);
-    /* box-shadow: -6px 0 17px rgb(0 0 0 / 26%); */
     width: 70%;
     transition: transform .6s, box-shadow .6s;
     transform: translateX(150%);
@@ -19,28 +18,29 @@ body.modal-opened .modal {
     opacity: 1;
 }
 
-body.menu-opened>*:not(.modal) {
+body.modal-opened>*:not(.modal) {
     opacity: 0.5;
 }
 
-body.menu-opened {
+body.modal-opened {
     overflow: hidden;
+}
+
+.close {
+    display: none;
 }
 
 @media (max-width: 640px) {
     .modal {
-
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding-inline-end: 2em;
         padding-inline-start: 2em;
-
         top: 0;
         right: 0;
         height: 100%;
         width: 50%;
-
     }
 
     .toolbar {
@@ -55,6 +55,18 @@ body.menu-opened {
         padding-top: 4%;
         padding-bottom: 4%;
     }
+
+    .close {
+        display: unset;
+        position: relative;
+        right: 37%;
+        background-color: wheat;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+    }
+
 }
 
 .modal .toolbar>img {
