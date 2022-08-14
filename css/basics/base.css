@@ -11,6 +11,7 @@ body {
     /* width: 1000px; */
     background-color: var(--color2);
     font-family: montserrat-regular;
+    cursor: pointer;
 }
 
 footer {

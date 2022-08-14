@@ -3,6 +3,8 @@
 function onInit() {
     console.log('sd');
     renderGallery()
+
+
 }
 
 function toggleModal() {

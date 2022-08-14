@@ -20,7 +20,7 @@
                     <button class="close" onclick="toggleMenu()">X</button>
                     <li class="flex space-between"><a href="./index.html">gallery</a></li>
                     <li class="flex space-between"><a href="./mems.html">memes</a></li>
-                    <li class="flex space-between"><a href="#">about</a></li>
+                    <li class="flex space-between"><a href="#about-me">about</a></li>
                 </ul>
             </nav>
             <button class="toggle-menu" onclick="toggleMenu()">☰</button>
@@ -42,7 +42,7 @@
             <option value="baby">
         </datalist>
 
-        <div>search by some popular keywords</div>
+        <div class="keywords-container"></div>
     </section>
 
     <section class="images-container">
@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section id="about-me" class="about">
         <div>
             <img class="my-image" src="img/Me.png" alt="">
             <div class="description">
@@ -78,38 +78,44 @@
         <p class="rights">all rights reserved 2022</p>
     </footer>
 
-    <div class="modal flex space-between">
+    <div class="modal flex full">
+        <button class="close" onclick="toggleModal()">X</button>
         <div class="canvas-container">
-            <canvas id="my-canvas" height="450" width="450">
+            <canvas id="my-canvas" height="400" width="400">
             </canvas>
         </div>
-        <div class="toolbar flex flex-column">
-            <div class="toolbar basic-toolbar flex-column">
-                <input value='' class="toolbar-input" type="text" onkeyup="onChangedTxt(event)">
-                <div class="toolbar basic-toolbar-controller">
-                    <img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""
-                        onclick="onChangeLine()">
-                    <img src="icons/add.png" alt="">
-                    <img src="icons/trash.png" alt="">
-                </div>
+        <div class="toolbar">
+            <!-- <div class="toolbar basic-toolbar"> -->
+            <input value='' class="toolbar toolbar-input" type="text" onkeyup="onChangedTxt(event)">
+            <!-- </div> -->
+            <div class="toolbar edit-toolbar flex space-evenly">
+                <img class="up-and-down" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""
+                    onclick="onChangeLine()">
+                <img class="add1" src="icons/add.png" alt="">
+                <img class="trash" src="icons/trash.png" alt="">
             </div>
 
-            <div class="toolbar advanced-edit">
+
+            <!-- <div class="toolbar advanced-edit "> -->
+            <div class="toolbar toolbar-icons flex space-evenly">
                 <img src="ICONS/increase font - icon.png" onclick="onFontSizeChange(1)" alt="">
                 <img src="ICONS/decrease font - icon.png" onclick="onFontSizeChange(-1)" alt="">
                 <img src="ICONS/align-to-left.png" alt="">
                 <img src="ICONS/center-text-alignment.png" alt="">
                 <img src="ICONS/align-to-right.png" alt="">
+            </div>
+            <div class="toolbar advanced-icons flex space-evenly">
+                <input class="toolbar impact" type="text" name="" id="">
 
-                <input type="text" name="" id="">
-                <img src="ICONS/text stroke.png" alt="">
-
-                <img class="color-picker" src="ICONS/paint-board-and-brush.png" alt=""
+                <img class="toolbar text-stroke" src="ICONS/text stroke.png" alt="">
+                <img class="toolbar color-picker" src="ICONS/paint-board-and-brush.png" alt=""
                     onclick="openColorSelector(event)">
                 <input type="color" class="invisible" value="#add8e6" onchange="getColor()" />
             </div>
 
-            <div class="accessories">
+            <!-- </div> -->
+
+            <div class="accessories flex space-evenly">
 
                 <ul class="emoji-list flex clean-list" onclick="onEmojiSelect(event)">
                     <li> &#128512</li>
@@ -121,7 +127,13 @@
 
             </div>
 
-            <button type="submit" onclick="onSaveMeme()">save</button>
+            <button class="save" type="submit" onclick="onSaveMeme()">save</button>
+            <button class="share" type="submit" onclick="onShareMeme()">share</button>
+            <div class="share-msg">
+                <p class="user-msg"></p>
+                <div class="share-container"></div>
+            </div>
+
         </div>
     </div>
 

@@ -16,11 +16,16 @@ header {
 .main-nav-list li a {
     border: none;
     text-decoration: none;
+    color: var(--color2);
     width: 100px;
     font-size: 0.95em;
     font-weight: 400;
-
 }
+
+.main-nav-list li a:hover {
+    color: black;
+}
+
 
 
 

@@ -1,20 +1,20 @@
 .modal {
     position: fixed;
-    flex-direction: row;
-    padding-top: 30px;
-    top: 20%;
-    right: 0;
-    height: 65vh;
-    background-color: rgb(255 255 255 / 90%);
+    background-color: var(--color2);
     border: 5px solid var(--color1);
-    width: 70%;
-    transition: transform .6s, box-shadow .6s;
-    transform: translateX(150%);
+    transition: transform .6s;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(200%);
 }
 
 body.modal-opened .modal {
     box-shadow: -6px 0 17px rgb(0 0 0 / 26%);
-    transform: translateX(-15vh);
+    transform: translateX(50%);
     opacity: 1;
 }
 
@@ -30,21 +30,148 @@ body.modal-opened {
     display: none;
 }
 
+
+.modal .toolbar>img {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 20%;
+}
+
+.modal>.toolbar {
+    width: 100%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        'input input input input input'
+        '. edit-toolbar edit-toolbar edit-toolbar .'
+        'toolbar-icons toolbar-icons toolbar-icons toolbar-icons toolbar-icons'
+        'advanced-icons advanced-icons advanced-icons advanced-icons advanced-icons'
+        'accessories accessories accessories accessories accessories'
+        '. share save . .';
+    justify-items: center;
+    gap: 4%;
+}
+
+.toolbar-input {
+    grid-area: input;
+}
+
+.edit-toolbar {
+    grid-area: edit-toolbar;
+    align-self: baseline;
+    gap: 4%;
+
+}
+
+.toolbar-icons {
+    grid-area: toolbar-icons;
+    gap: 4%;
+
+}
+
+.advanced-icons {
+    grid-area: advanced-icons;
+    gap: 2%;
+
+}
+
+.accessories {
+    grid-area: accessories;
+}
+
+.save {
+    grid-area: save;
+}
+
+.share {
+    grid-area: share;
+}
+
+.basic-toolbar-controller {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.basic-toolbar-controller>img {
+    margin-right: 10px;
+}
+
+.toolbar-input {
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    font-size: 1.25em;
+}
+
+.accessories {
+    margin-top: 40px;
+}
+
+.accessories input {
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+}
+
+.invisible {
+    display: none;
+}
+
+.emoji-list {
+    font-size: 48px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 35px;
+    width: 6em;
+    padding-inline-start: 13%;
+}
+
+.share-msg {
+    position: absolute;
+    bottom: 5%;
+    background-color: antiquewhite;
+}
+
+.toolbar button {
+    border-radius: 8px;
+    background-color: white;
+    width: 7em;
+
+}
+
+
 @media (max-width: 640px) {
     .modal {
         flex-direction: column;
-        justify-content: center;
+        justify-content: unset;
         align-items: center;
-        padding-inline-end: 2em;
-        padding-inline-start: 2em;
         top: 0;
-        right: 0;
         height: 100%;
-        width: 50%;
+        width: 95%;
+        transform: translateX(150%);
     }
+
+    body.modal-opened .modal {
+        transform: translateX(3%);
+    }
+
+
+    .canvas-container {
+        background-color: white;
+        top: 0;
+        left: 0;
+        padding: 3%;
+        border-radius: 15px;
+    }
+
 
     .toolbar {
         width: 100%;
+        align-items: center;
     }
 
     .advanced-edit {
@@ -69,60 +196,16 @@ body.modal-opened {
 
 }
 
-.modal .toolbar>img {
-    height: 40px;
-    width: 40px;
-}
-
-.toolbar {
-    width: 360px;
-    text-align: center;
-}
-
-.basic-toolbar-controller {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.basic-toolbar-controller>img {
-    margin-right: 10px;
-}
-
-.toolbar-input {
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-    font-size: 1.25em;
-}
-
-.advanced-edit {
-    margin-top: 40px;
-}
-
-.accessories {
-    margin-top: 40px;
-}
-
-.accessories input {
-    border-radius: 20px;
-    width: 300px;
-    height: 60px;
-}
-
-#my-canvas {
-    background-color: black;
-}
-
-.invisible {
-    display: none;
-}
-
-.emoji-list {
-    font-size: 48px;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 35px;
-    width: 6em;
-    padding-inline-start: 13%;
-
+@media (min-width: 640px) {
+    .modal {
+        flex-direction: row;
+        background-color: var(--color2);
+        border: 5px solid var(--color1);
+        transition: transform .6s;
+        height: 80%;
+        width: auto;
+        position: fixed;
+        right: 50%;
+        transform: translateX(250%);
+    }
 }
